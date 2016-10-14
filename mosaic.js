@@ -1,6 +1,6 @@
 var properties = [
-  {id: "Rows", type: 'range', value: 3, min: 1, max: 10, step: 1},
-  {id: "Columns", type: 'range', value: 3, min: 1, max: 10, step: 1},
+  {id: "Rows", type: 'range', value: 2, min: 1, max: 10, step: 1},
+  {id: "Columns", type: 'range', value: 2, min: 1, max: 10, step: 1},
   {id: "Separate Pieces", type: "boolean", value: true}
 ];
 
