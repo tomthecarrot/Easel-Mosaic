@@ -54,55 +54,17 @@ var executor = function(args, success, failure) {
   var width = right - left;
   var height = top - bottom;
 
-  // Returns 6 points representing the shape of one edge of a puzzle piece.
+  // Returns 2 points representing the shape of one edge of a rectangular piece.
   // Point coordinates are expressed as percentage distances across the width
   // and height of the piece.
   var edgeDistributions = (function() {
-    var randomBetween = function(min, max) {
-      return Math.random() * (max - min) + min;
-    };
-
-    var baselineOffsets = {
-      xMin: 51,
-      xMax: 62,
-      yMin: -15,
-      yMax: 5
-    };
-
-    var upperOffsets = {
-      xMin: 20,
-      xMax: 30,
-      yMin: 20,
-      yMax: 44
-    };
-
     return function() {
       var point1 = [0, 0];
-      var point2 = [0, 0];
-      var point3 = [0, 0];
-      /*var point2 = [
-        randomBetween(baselineOffsets.xMin, baselineOffsets.xMax),
-        randomBetween(baselineOffsets.yMin, baselineOffsets.yMax)
-      ];
-      var point3 = [
-        randomBetween(upperOffsets.xMin, upperOffsets.xMax),
-        randomBetween(upperOffsets.yMin, upperOffsets.yMax)
-      ];
-      var point4 = [
-        randomBetween(100-upperOffsets.xMax, 100-upperOffsets.xMin),
-        randomBetween(upperOffsets.yMin, upperOffsets.yMax)
-      ];
-      var point5 = [
-        randomBetween(100-baselineOffsets.xMax, 100-baselineOffsets.xMin),
-        randomBetween(baselineOffsets.yMin, baselineOffsets.yMax)
-      ];*/
-      var point6 = [100, 0];
-      var point4 = [100, 0];
-      var point5 = [100, 0];
+      var point2 = [100, 0];
 
       var sign = Math.random() < 0.5 ? -1 : 1;
 
-      return [point1, point2, point3, point4, point5, point6].map(function(p) {
+      return [point1, point2].map(function(p) {
         return [p[0] / 100, p[1] * sign / 100];
       });
     };
