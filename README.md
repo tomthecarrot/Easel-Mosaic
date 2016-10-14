@@ -1,8 +1,11 @@
-# puzzle-generator
+# Easel-Mosaic
 
-Easel app for generating random puzzles from an Easel design.
+Inventables Easel Mosaic App Challenge Entry  
+by Thomas Suarez ([tomthecarrot](https://github.com/tomthecarrot))
 
-Dependencies:
+Please see the [challenge forum post](https://discuss.inventables.com/t/mosaic-app-challenge/28873).
+
+### Dependencies
 
 - [d3-path](https://github.com/d3/d3-path)
 - [d3-shape](https://github.com/d3/d3-shape)
