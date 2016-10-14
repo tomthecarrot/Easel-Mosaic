@@ -1,7 +1,7 @@
 var properties = [
-  {id: "Rows", type: 'range', value: 5, min: 1, max: 10, step: 1},
-  {id: "Columns", type: 'range', value: 5, min: 1, max: 10, step: 1},
-  {id: "Separate Pieces", type: "boolean", value: false}
+  {id: "Rows", type: 'range', value: 3, min: 1, max: 10, step: 1},
+  {id: "Columns", type: 'range', value: 3, min: 1, max: 10, step: 1},
+  {id: "Separate Pieces", type: "boolean", value: true}
 ];
 
 var executor = function(args, success, failure) {
@@ -78,7 +78,9 @@ var executor = function(args, success, failure) {
 
     return function() {
       var point1 = [0, 0];
-      var point2 = [
+      var point2 = [0, 0];
+      var point3 = [0, 0];
+      /*var point2 = [
         randomBetween(baselineOffsets.xMin, baselineOffsets.xMax),
         randomBetween(baselineOffsets.yMin, baselineOffsets.yMax)
       ];
@@ -93,8 +95,10 @@ var executor = function(args, success, failure) {
       var point5 = [
         randomBetween(100-baselineOffsets.xMax, 100-baselineOffsets.xMin),
         randomBetween(baselineOffsets.yMin, baselineOffsets.yMax)
-      ];
+      ];*/
       var point6 = [100, 0];
+      var point4 = [100, 0];
+      var point5 = [100, 0];
 
       var sign = Math.random() < 0.5 ? -1 : 1;
 
@@ -112,7 +116,7 @@ var executor = function(args, success, failure) {
     var points, i, j;
 
     for (j = 0; j < n; j++) {
-      lines.push([[0, 0], [1,0]]);
+      lines.push([[0, 0], [1, 0]]);
     }
     lineGroups.push(lines);
 
@@ -121,12 +125,13 @@ var executor = function(args, success, failure) {
       for (j = 0; j < n; j++) {
         lines.push(edgeDistributions());
       }
+      lines.push([[0, 0], [1, 0]]);
       lineGroups.push(lines);
     }
 
     lines = [];
     for (j = 0; j < n; j++) {
-      lines.push([[0, 0], [1,0]]);
+      lines.push([[0, 0], [1, 0]]);
     }
     lineGroups.push(lines);
 
